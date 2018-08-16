@@ -96,7 +96,7 @@ function update_text_all(intext) {
 function update_all() {
   var str = "";
   for (var x = 0; x < res_types.length; x++) {
-    str += document.getElementById(text_prefix + x).innerHTML + "-";
+    str += document.getElementById(text_prefix + x).innerHTML + sep;
   }
   update_text_all(str.slice(0, -1));
 }
