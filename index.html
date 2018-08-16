@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <!--title>bar v0.1</title-->
+  <link rel="stylesheet" type="text/css" href="bar.css">
+  <script type="text/javascript" src="bar.js"></script>
+</head>
+
+<body onload='init_resize_bars(); update_text_all("150-150-150-150");'>
+<b>Girls' Frontline 5* equipment crafting requirement calculator.</b> <br><br>
+<div class='holder'>
+  <div class='progressLine'>
+    <div class='textContent'>Manpower</div>
+    <div class='textContent'>Ammo</div>
+    <div class='textContent'>Rations</div>
+    <div class='textContent'>Parts</div>
+  </div>
+  <div class='progressLine' id='line_0'>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_0_0'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_0_1'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_0_2'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_0_3'></div></div></div>
+    <div class='textLabel' id='label_0'></div>
+  </div>
+  <div class='progressLine' id='line_1'>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_1_0'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_1_1'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_1_2'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_1_3'></div></div></div>
+    <div class='textLabel' id='label_1'></div>
+  </div>
+  <div class='progressLine' id='line_2'>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_2_0'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_2_1'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_2_2'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_2_3'></div></div></div>
+    <div class='textLabel' id='label_2'></div>
+  </div>
+  <div class='progressLine' id='line_3'>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_3_0'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_3_1'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_3_2'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_3_3'></div></div></div>
+    <div class='textLabel' id='label_3'></div>
+  </div>
+  <div class='progressLine' id='line_4'>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_4_0'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_4_1'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_4_2'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_4_3'></div></div></div>
+    <div class='textLabel' id='label_4'></div>
+  </div>
+  <div class='progressLine' id='line_5'>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_5_0'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_5_1'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_5_2'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_5_3'></div></div></div>
+    <div class='textLabel' id='label_5'></div>
+  </div>
+  <div class='progressLine' id='line_6'>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_6_0'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_6_1'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_6_2'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_6_3'></div></div></div>
+    <div class='textLabel' id='label_6'></div>
+  </div>
+  <div class='progressLine' id='line_7'>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_7_0'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_7_1'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_7_2'></div></div></div>
+    <div class='progressContainer'><div class='progressOuter'><div class='progressInner' id='p_7_3'></div></div></div>
+    <div class='textLabel' id='label_7'></div>
+  </div>
+  <div class='progressLine' id='pbar'>
+    <div class='textContent flex'>
+      <div class='greyMargin noselect' onclick='adjust(0,-1)'>&lt;</div>
+      <div class='clickTarget' id='i_0' onmousemove='click_event(event, 0)'><div class='marker0' id='m_0'></div></div>
+      <div class='greyMargin noselect' onclick='adjust(0,+1)'>&gt;</div></div>
+    <div class='textContent flex'>
+      <div class='greyMargin noselect' onclick='adjust(1,-1)'>&lt;</div>
+      <div class='clickTarget' id='i_1' onmousemove='click_event(event, 1)'><div class='marker0' id='m_1'></div></div>
+      <div class='greyMargin noselect' onclick='adjust(1,+1)'>&gt;</div></div>
+    <div class='textContent flex'>
+      <div class='greyMargin noselect' onclick='adjust(2,-1)'>&lt;</div>
+      <div class='clickTarget' id='i_2' onmousemove='click_event(event, 2)'><div class='marker0' id='m_2'></div></div>
+      <div class='greyMargin noselect' onclick='adjust(2,+1)'>&gt;</div></div>
+    <div class='textContent flex'>
+      <div class='greyMargin noselect' onclick='adjust(3,-1)'>&lt;</div>
+      <div class='clickTarget' id='i_3' onmousemove='click_event(event, 3)'><div class='marker0' id='m_3'></div></div>
+      <div class='greyMargin noselect' onclick='adjust(3,+1)'>&gt;</div></div>
+  </div>
+  <div class='progressLine' id='ptext'>
+    <div class='textContent' id='t_0'></div>
+    <div class='textContent' id='t_1'></div>
+    <div class='textContent' id='t_2'></div>
+    <div class='textContent' id='t_3'></div>
+    <input type='text' oninput='update_text_all(this.value)' id='in_all' />
+  </div>
+</div>
+
+<p>
+Note: <br>
+All recipes shown are for gold-type equipment, because that's the only rarity that matters.<br>
+It is possible to grey out all options, for example with a 10-151-10-10 recipe.<br>
+This merely means that that kind of recipe will produce no gold at all.<br>
+</p>
+<p>
+A piece of advice: <br>
+Rather than picking a category you want and rolling that you should first roll the most <br>
+generic recipe possible and then progressively try to exclude categories you don't need.<br>
+</p>
+
+</body>
+
+</html>

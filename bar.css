@@ -1,0 +1,76 @@
+.disabled {
+  opacity: 0.2;
+}
+.holder {
+  width: 100%;
+  height: 25%;
+}
+.progressLine {
+  border: 1px solid black;
+  width: 50%;
+  display: flex;
+}
+.progressContainer {
+  border: solid transparent;
+  border-width: 0px 1px 0px 0px;
+  width: 20%;
+}
+.progressOuter {
+  border: 1px solid black;
+  height: 8px;
+  margin: 10px 15px 10px 15px;
+}
+.progressInner {
+  position: relative;
+  height: 100%;
+  background: rgb(49,155,207);
+}
+.textContent {
+  width: 20%;
+  height: 20px;
+  margin: 0px;
+  text-align: center;
+  border: solid black;
+  border-width: 0px 1px 0px 0px;
+}
+.flex {
+  display: flex;
+}
+.textLabel {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 0px 0px 0px 10px;
+}
+.greyMargin {
+  width: 15px;
+  background-color: lightgrey;
+}
+.noselect
+{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.clickTarget {
+  width: 100%;
+}
+.marker0 {
+  position: relative;
+  border: solid red;
+  border-width: 0px 1px 0px 1px;
+  height: 1380%;
+  top: -1280%;
+  left: 50%;
+  width: 0px;
+  z-index: 10;
+}
+#pbar {
+  border: 1px solid black;
+}
+input[type=text] {
+  border:1px solid green;
+}
