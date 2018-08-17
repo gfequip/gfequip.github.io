@@ -45,6 +45,7 @@
 .greyMargin {
   width: 15px;
   background-color: lightgrey;
+  cursor: pointer;
 }
 .noselect
 {
@@ -57,6 +58,7 @@
 }
 .clickTarget {
   width: 100%;
+  cursor: col-resize;
 }
 .marker0 {
   position: relative;
