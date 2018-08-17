@@ -124,7 +124,7 @@ function click_event(e, index) {
 
 function adjust(index, amount) {
   var v = Number(document.getElementById(text_prefix + index).innerHTML);
-  if (v <= res_min || v >= res_max || v+amount < res_min || v+amount > res_max) {
+  if (v+amount < res_min || v+amount > res_max) {
     return;
   }
   document.getElementById(text_prefix + index).innerHTML = v + amount;
